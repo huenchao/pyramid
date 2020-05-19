@@ -1,0 +1,6 @@
+{
+    "name": "pyramid",
+    "dependencies": {
+        "egg": "^2.26.1"
+    }
+}
