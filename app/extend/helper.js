@@ -12,11 +12,16 @@ const _HEADLESS = Symbol('PuppeteerManager#Configs#headless');
 const _ARGS = Symbol('PuppeteerManager#Configs#args');
 
 const isCrashed = 'isCrashed';
+const ErrorCodes = {
+    tcpError: 1,
+    tcpHealthy: 0,
+};
 
 // TODO 
 class PuppeteerManager extends EventEmitter {
-    constructor(){
+    constructor(options){
         super();
+        this.app = options.app;
         this[_MAX_WSE] = os.cpus().length;
         this[_HEADLESS] = _isLinux;
         this[_ARGS] = [
@@ -64,27 +69,37 @@ class PuppeteerManager extends EventEmitter {
         return WSE_LIST;
     }
 
-    async conn2SpecialBrowser(wsEndpoint){
-        const port = url.parse(wsEndpoint).port;
+    async conn2SpecialBrowser(browserWSEndpoint){
+        if(typeof browserWSEndpoint !== 'string'){
+            return ErrorCodes.tcpError
+        }
+        let port;
+        try {
+             port = url.parse(`${browserWSEndpoint}`).port;
+        } catch (error) {
+            this.app.logger.error(`the argument browserWSEndpoint must be the  type of ws protocol`)
+            res(ErrorCodes.tcpError);
+        }
+
         const errCode = await new Promise((res, _) => {
             detect(port, (err, _port) => {
               if (err) {
-                console.error('something happened error When we try to detect the port', err.message);
-                res(1);
+                this.app.logger.error('something happened error When we try to detect the port', err.message);
+                res(ErrorCodes.tcpError);
               }
               if (port === `${_port}`) {
-                console.log(`${port} was not occupied, the special browser has crashed.`);
-                res(1);
+                this.app.logger.info(`${port} was not occupied, the special browser has crashed.`);
+                res(ErrorCodes.tcpError);
               } else {
-                console.log(`${port} was occupied, the special browser is running. `);
-                res(0);
+                this.app.logger.info(`${port} was occupied, the special browser is running. `);
+                res(ErrorCodes.tcpHealthy);
               }
             });
         });
         if (errCode) {
             return errCode;
         }
-        const browser = await puppeteer.connect({ wsEndpoint });
+        const browser = await puppeteer.connect({ browserWSEndpoint });
         return browser;
     }
 
@@ -93,39 +108,38 @@ class PuppeteerManager extends EventEmitter {
             browserInstance.removeAllListeners();
             await browserInstance.close();
         } else {
-            console.log(`the next step wanna kill the browser whose pid is ${pid}`);
+            this.app.logger.info(`the next step wanna kill the browser whose pid is ${pid}`);
             try {
               pid && execSync(`kill -9 ${pid}`);
             } catch (error) {
-              console.error(`pid=${pid} could not be closed`);
+              this.app.logger.error(`pid=${pid} could not be closed`);
             }
         }
         browserInstance = null;
     }
-  
 }
 
 const hook = Symbol('TaskScheduler#hook');
 const noop = ()=>{};
 class TaskScheduler extends EventEmitter {
+    static [hook]() {}
     setCustomTaskHook(taskFunc){
-      this[hook] = taskFunc || noop
+        TaskScheduler[hook] = taskFunc || noop
     }
-    taskShell(taskParams){
+    vm(taskParams){
         return new Promise(async (task_res, task_rej) => {
-            const { index } = taskParams;
-            const eggApp = Object.getPrototypeOf(this.application);
+            const { index,c } = taskParams;
             const browserWSEndpoint = this.WSE_LIST[index].browserWSEndpoint;
             let browser;
             let pid;
             try {
-                browser = await eggApp.PuppeteerManager.conn2SpecialBrowser(browserWSEndpoint);
+                browser = await this.app.PuppeteerManager.conn2SpecialBrowser(browserWSEndpoint);
                 if (typeof browser === 'number') {
                     return task_rej(Error(isCrashed));
                 }
                 pid = browser && browser.process() && browser.process().pid;
               } catch (error) {
-                console.log('the conn2SpecialBrowser called fail:', error);
+                this.app.logger.info('the conn2SpecialBrowser called fail:', error);
                 return task_rej(error);
             }
             let disconnected = false;
@@ -133,18 +147,20 @@ class TaskScheduler extends EventEmitter {
                 disconnected = true;
             });
             try {
-                await this[hook]({
+                await TaskScheduler[hook]({
                     browser,
-                    taskParams
-                })
+                    taskParams:c
+                });
             } catch (error) {
-                console.error(error.message);
-                console.error('relaunch a new browser...');
-                await eggApp.PuppeteerManager.cleanTheSpecialBrowser(browser, disconnected, pid);
+                this.app.logger.error(error.message);
+                this.app.logger.error('relaunch a new browser...');
+                await this.app.PuppeteerManager.cleanTheSpecialBrowser(browser, disconnected, pid);
                 return task_rej(error);
             }
             browser.disconnect();
             browser.removeAllListeners();
+            browser = null;
+            this.app.logger.info('done');
             task_res();
         })
     }
@@ -153,7 +169,7 @@ class TaskScheduler extends EventEmitter {
         const self = this;
         this.acc = 0;
         this.WSE_LIST = [];
-        this.application = options.app;
+        this.app = options.app;
         this.highWaterMark = options.highWaterMark || 200;
         this.scheduleArr = [];
         this.watchDogs = [];
@@ -171,7 +187,7 @@ class TaskScheduler extends EventEmitter {
             objectMode: true,
             highWaterMark: this.highWaterMark,
             write(c, _, cb) {
-                console.log(`the NO.${self.acc} task wanna to be executed`);
+                self.app.logger.info(`the NO.${self.acc} task wanna to be executed`);
                 let freeExecutors = 0;
                 const freeExecutorsArray = [];
                 let index;
@@ -188,7 +204,7 @@ class TaskScheduler extends EventEmitter {
                     index = freeExecutorsArray[_index];
                     self.WSE_LIST[index].status = 1;
                 }
-                self.watchDogs[index] = self.taskShell({ c, index }).then(res => {
+                self.watchDogs[index] = self.vm({ c, index }).then(res => {
                     return {
                         res,
                         index,
@@ -229,18 +245,22 @@ class TaskScheduler extends EventEmitter {
 
 module.exports = {
     initManagers(){
-        const app = Object.create(this.app);
         // TODO mix egg configs to PuppeteerManager constructor so that it can be controlled by users
-        this.app.PuppeteerManager = new PuppeteerManager();
-        this.app.TaskScheduler = new TaskScheduler({ app });
-        module.exports.proxy(this.app)
+        this.app.PuppeteerManager = new PuppeteerManager({ app: this.app});
+        this.app.TaskScheduler = new TaskScheduler({ app: this.app});
+        module.exports.proxy(this.app);
     },
     proxy(app){
         Object.defineProperty(app,'setTask',{
             get:function (){
-                return app.TaskScheduler.setCustomTaskHook
+                return app.TaskScheduler.setCustomTaskHook;
             }
-        })
+        });
+        Object.defineProperty(app,'taskQueue',{
+            get:function (){
+                return app.TaskScheduler.producer;
+            }
+        });
     }
-}
+};
 

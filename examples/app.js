@@ -4,11 +4,11 @@ class AppBootHook {
     }
     async didReady() {
       // 应用已经启动完毕
-      console.log('my application did Ready ')   
       const ctx = await this.app.createAnonymousContext();
+      ctx.logger.info('your application did Ready')   
       ctx.app.setTask(ctx.service.test.customTask);
     }
-  }
+}
   
-  module.exports = AppBootHook;
+module.exports = AppBootHook;
   

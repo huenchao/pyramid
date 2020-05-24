@@ -13,7 +13,12 @@ module.exports = appInfo => {
   config.test = {
     key: appInfo.name + '_123456',
   };
-
+  
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
 
   return config;
 };

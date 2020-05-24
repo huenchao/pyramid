@@ -10,7 +10,7 @@
     "protocolWhiteList": "/Users/huenchao/studys/pyramid/node_modules/egg-security/config/config.default.js",
     "defaultMiddleware": "/Users/huenchao/studys/pyramid/node_modules/egg-security/config/config.default.js",
     "csrf": {
-      "enable": "/Users/huenchao/studys/pyramid/node_modules/egg-security/config/config.default.js",
+      "enable": "/Users/huenchao/studys/pyramid/config/config.default.js",
       "type": "/Users/huenchao/studys/pyramid/node_modules/egg-security/config/config.default.js",
       "ignoreJSON": "/Users/huenchao/studys/pyramid/node_modules/egg-security/config/config.default.js",
       "useSession": "/Users/huenchao/studys/pyramid/node_modules/egg-security/config/config.default.js",
