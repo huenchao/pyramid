@@ -4,11 +4,8 @@ class AppBootHook {
     }
     async didReady() {
       // 应用已经启动完毕
-      console.info('start to launch a browser.')
       const ctx = await this.app.createAnonymousContext();
-      ctx.helper.init();
-      //TODO user config
-      this.app.TaskScheduler.WSE_LIST = await this.app.PuppeteerManager.getWsEndpointsWithStatuses();
+      ctx.app.setTask(ctx.service.test.customTask);
     }
   }
   
