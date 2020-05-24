@@ -1,6 +1,8 @@
 {
     "name": "pyramid",
     "dependencies": {
+        "detect-port": "^1.3.0",
         "egg": "^2.26.1"
-    }
+    },
+    "main": "./index"
 }
