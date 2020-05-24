@@ -107,7 +107,7 @@
         "/Users/huenchao/studys/pyramid/node_modules/egg-view/config/locales",
         "/Users/huenchao/studys/pyramid/node_modules/egg/config/locales",
         "/Users/huenchao/studys/pyramid/config/locales",
-        "/Users/huenchao/studys/pyramid/test/config/locales"
+        "/Users/huenchao/studys/pyramid/examples/config/locales"
       ],
       "queryField": "locale",
       "cookieField": "locale",
@@ -165,14 +165,14 @@
     },
     "static": {
       "prefix": "/public/",
-      "dir": "/Users/huenchao/studys/pyramid/test/app/public",
+      "dir": "/Users/huenchao/studys/pyramid/examples/app/public",
       "dynamic": true,
       "preload": false,
       "buffer": false,
       "maxFiles": 1000
     },
     "view": {
-      "root": "/Users/huenchao/studys/pyramid/test/app/view",
+      "root": "/Users/huenchao/studys/pyramid/examples/app/view",
       "cache": false,
       "defaultExtension": ".html",
       "defaultViewEngine": "",
@@ -206,9 +206,9 @@
         "egg-mock": "^4.0.0"
       }
     },
-    "baseDir": "/Users/huenchao/studys/pyramid/test",
+    "baseDir": "/Users/huenchao/studys/pyramid/examples",
     "HOME": "/Users/huenchao",
-    "rundir": "/Users/huenchao/studys/pyramid/test/run",
+    "rundir": "/Users/huenchao/studys/pyramid/examples/run",
     "dump": {
       "ignore": "<Set>"
     },
@@ -240,7 +240,7 @@
       "returnRawBody": true
     },
     "logger": {
-      "dir": "/Users/huenchao/studys/pyramid/test/logs/framework-example",
+      "dir": "/Users/huenchao/studys/pyramid/examples/logs/framework-example",
       "encoding": "utf8",
       "env": "local",
       "level": "INFO",

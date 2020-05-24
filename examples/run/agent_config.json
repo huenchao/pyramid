@@ -135,14 +135,14 @@
     },
     "static": {
       "prefix": "/public/",
-      "dir": "/Users/huenchao/studys/pyramid/test/app/public",
+      "dir": "/Users/huenchao/studys/pyramid/examples/app/public",
       "dynamic": true,
       "preload": false,
       "buffer": false,
       "maxFiles": 1000
     },
     "view": {
-      "root": "/Users/huenchao/studys/pyramid/test/app/view",
+      "root": "/Users/huenchao/studys/pyramid/examples/app/view",
       "cache": false,
       "defaultExtension": ".html",
       "defaultViewEngine": "",
@@ -176,9 +176,9 @@
         "egg-mock": "^4.0.0"
       }
     },
-    "baseDir": "/Users/huenchao/studys/pyramid/test",
+    "baseDir": "/Users/huenchao/studys/pyramid/examples",
     "HOME": "/Users/huenchao",
-    "rundir": "/Users/huenchao/studys/pyramid/test/run",
+    "rundir": "/Users/huenchao/studys/pyramid/examples/run",
     "dump": {
       "ignore": "<Set>"
     },
@@ -210,7 +210,7 @@
       "onerror": "<Function onerror>"
     },
     "logger": {
-      "dir": "/Users/huenchao/studys/pyramid/test/logs/framework-example",
+      "dir": "/Users/huenchao/studys/pyramid/examples/logs/framework-example",
       "encoding": "utf8",
       "env": "local",
       "level": "INFO",

@@ -15,10 +15,10 @@ const isCrashed = 'isCrashed';
 
 // TODO 
 class PuppeteerManager extends EventEmitter {
-    constructor(options){
+    constructor(){
         super();
-        this[_MAX_WSE] = options.maxWse || os.cpus().length;
-        this[_HEADLESS] = options.headless || _isLinux;
+        this[_MAX_WSE] = os.cpus().length;
+        this[_HEADLESS] = _isLinux;
         this[_ARGS] = [
             '--single-process​',
             '--no-first-run',
@@ -39,8 +39,8 @@ class PuppeteerManager extends EventEmitter {
 
     launchOneBrowser(){
        return puppeteer.launch({
-            headless,
-            args,
+            headless: this[_HEADLESS],
+            args: this[_ARGS],
             handleSIGINT: true,
             defaultViewport: {
               deviceScaleFactor: 2,
@@ -108,8 +108,6 @@ class PuppeteerManager extends EventEmitter {
 const hook = Symbol('TaskScheduler#hook');
 const noop = ()=>{};
 class TaskScheduler extends EventEmitter {
-    acc = 0;
-    WSE_LIST = [];
     setCustomTaskHook(taskFunc){
       this[hook] = taskFunc || noop
     }
@@ -153,6 +151,8 @@ class TaskScheduler extends EventEmitter {
     constructor(options){
         super();
         const self = this;
+        this.acc = 0;
+        this.WSE_LIST = [];
         this.application = options.app;
         this.highWaterMark = options.highWaterMark || 200;
         this.scheduleArr = [];
@@ -228,7 +228,7 @@ class TaskScheduler extends EventEmitter {
 }
 
 module.exports = {
-    init(){
+    initManagers(){
         const app = Object.create(this.app);
         // TODO mix egg configs to PuppeteerManager constructor so that it can be controlled by users
         this.app.PuppeteerManager = new PuppeteerManager();
