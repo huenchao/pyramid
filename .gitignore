@@ -38,6 +38,8 @@ thumbs.db
 .idea  
 node_modules/  
 jscoverage_lib/  
-bower_components/  
+bower_components/ 
 dist/
 test/
+
+package-lock.json

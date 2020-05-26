@@ -1,0 +1,362 @@
+[
+  {
+    "name": "Application Start",
+    "start": 1590500014930,
+    "end": 1590500015154,
+    "duration": 224,
+    "pid": 67139,
+    "index": 0
+  },
+  {
+    "name": "Load Plugin",
+    "start": 1590500014934,
+    "end": 1590500014943,
+    "duration": 9,
+    "pid": 67139,
+    "index": 1
+  },
+  {
+    "name": "Load Config",
+    "start": 1590500014944,
+    "end": 1590500014959,
+    "duration": 15,
+    "pid": 67139,
+    "index": 2
+  },
+  {
+    "name": "Require(0) /Users/huenchao/studys/pyramid/node_modules/egg-session/config/config.default.js",
+    "start": 1590500014944,
+    "end": 1590500014945,
+    "duration": 1,
+    "pid": 67139,
+    "index": 3
+  },
+  {
+    "name": "Require(1) /Users/huenchao/studys/pyramid/node_modules/egg-security/config/config.default.js",
+    "start": 1590500014945,
+    "end": 1590500014946,
+    "duration": 1,
+    "pid": 67139,
+    "index": 4
+  },
+  {
+    "name": "Require(2) /Users/huenchao/studys/pyramid/node_modules/egg-jsonp/config/config.default.js",
+    "start": 1590500014946,
+    "end": 1590500014947,
+    "duration": 1,
+    "pid": 67139,
+    "index": 5
+  },
+  {
+    "name": "Require(3) /Users/huenchao/studys/pyramid/node_modules/egg-onerror/config/config.default.js",
+    "start": 1590500014947,
+    "end": 1590500014947,
+    "duration": 0,
+    "pid": 67139,
+    "index": 6
+  },
+  {
+    "name": "Require(4) /Users/huenchao/studys/pyramid/node_modules/egg-i18n/config/config.default.js",
+    "start": 1590500014948,
+    "end": 1590500014948,
+    "duration": 0,
+    "pid": 67139,
+    "index": 7
+  },
+  {
+    "name": "Require(5) /Users/huenchao/studys/pyramid/node_modules/egg-watcher/config/config.default.js",
+    "start": 1590500014948,
+    "end": 1590500014949,
+    "duration": 1,
+    "pid": 67139,
+    "index": 8
+  },
+  {
+    "name": "Require(6) /Users/huenchao/studys/pyramid/node_modules/egg-schedule/config/config.default.js",
+    "start": 1590500014949,
+    "end": 1590500014949,
+    "duration": 0,
+    "pid": 67139,
+    "index": 9
+  },
+  {
+    "name": "Require(7) /Users/huenchao/studys/pyramid/node_modules/egg-multipart/config/config.default.js",
+    "start": 1590500014950,
+    "end": 1590500014950,
+    "duration": 0,
+    "pid": 67139,
+    "index": 10
+  },
+  {
+    "name": "Require(8) /Users/huenchao/studys/pyramid/node_modules/egg-development/config/config.default.js",
+    "start": 1590500014950,
+    "end": 1590500014951,
+    "duration": 1,
+    "pid": 67139,
+    "index": 11
+  },
+  {
+    "name": "Require(9) /Users/huenchao/studys/pyramid/node_modules/egg-logrotator/config/config.default.js",
+    "start": 1590500014951,
+    "end": 1590500014951,
+    "duration": 0,
+    "pid": 67139,
+    "index": 12
+  },
+  {
+    "name": "Require(10) /Users/huenchao/studys/pyramid/node_modules/egg-static/config/config.default.js",
+    "start": 1590500014952,
+    "end": 1590500014952,
+    "duration": 0,
+    "pid": 67139,
+    "index": 13
+  },
+  {
+    "name": "Require(11) /Users/huenchao/studys/pyramid/node_modules/egg-view/config/config.default.js",
+    "start": 1590500014952,
+    "end": 1590500014953,
+    "duration": 1,
+    "pid": 67139,
+    "index": 14
+  },
+  {
+    "name": "Require(12) /Users/huenchao/studys/pyramid/node_modules/egg/config/config.default.js",
+    "start": 1590500014953,
+    "end": 1590500014954,
+    "duration": 1,
+    "pid": 67139,
+    "index": 15
+  },
+  {
+    "name": "Require(13) /Users/huenchao/studys/pyramid/config/config.default.js",
+    "start": 1590500014956,
+    "end": 1590500014956,
+    "duration": 0,
+    "pid": 67139,
+    "index": 16
+  },
+  {
+    "name": "Require(14) /Users/huenchao/studys/pyramid/node_modules/egg-security/config/config.local.js",
+    "start": 1590500014956,
+    "end": 1590500014957,
+    "duration": 1,
+    "pid": 67139,
+    "index": 17
+  },
+  {
+    "name": "Require(15) /Users/huenchao/studys/pyramid/node_modules/egg-watcher/config/config.local.js",
+    "start": 1590500014957,
+    "end": 1590500014958,
+    "duration": 1,
+    "pid": 67139,
+    "index": 18
+  },
+  {
+    "name": "Require(16) /Users/huenchao/studys/pyramid/node_modules/egg-view/config/config.local.js",
+    "start": 1590500014958,
+    "end": 1590500014958,
+    "duration": 0,
+    "pid": 67139,
+    "index": 19
+  },
+  {
+    "name": "Require(17) /Users/huenchao/studys/pyramid/node_modules/egg/config/config.local.js",
+    "start": 1590500014958,
+    "end": 1590500014959,
+    "duration": 1,
+    "pid": 67139,
+    "index": 20
+  },
+  {
+    "name": "Load extend/agent.js",
+    "start": 1590500014960,
+    "end": 1590500015025,
+    "duration": 65,
+    "pid": 67139,
+    "index": 21
+  },
+  {
+    "name": "Require(18) /Users/huenchao/studys/pyramid/node_modules/egg-security/app/extend/agent.js",
+    "start": 1590500014960,
+    "end": 1590500014961,
+    "duration": 1,
+    "pid": 67139,
+    "index": 22
+  },
+  {
+    "name": "Require(19) /Users/huenchao/studys/pyramid/node_modules/egg-schedule/app/extend/agent.js",
+    "start": 1590500014962,
+    "end": 1590500014999,
+    "duration": 37,
+    "pid": 67139,
+    "index": 23
+  },
+  {
+    "name": "Require(20) /Users/huenchao/studys/pyramid/node_modules/egg-logrotator/app/extend/agent.js",
+    "start": 1590500014999,
+    "end": 1590500015001,
+    "duration": 2,
+    "pid": 67139,
+    "index": 24
+  },
+  {
+    "name": "Require(21) /Users/huenchao/studys/pyramid/app/extend/agent.js",
+    "start": 1590500015001,
+    "end": 1590500015024,
+    "duration": 23,
+    "pid": 67139,
+    "index": 25
+  },
+  {
+    "name": "Load extend/context.js",
+    "start": 1590500015025,
+    "end": 1590500015074,
+    "duration": 49,
+    "pid": 67139,
+    "index": 26
+  },
+  {
+    "name": "Require(22) /Users/huenchao/studys/pyramid/node_modules/egg-security/app/extend/context.js",
+    "start": 1590500015025,
+    "end": 1590500015032,
+    "duration": 7,
+    "pid": 67139,
+    "index": 27
+  },
+  {
+    "name": "Require(23) /Users/huenchao/studys/pyramid/node_modules/egg-jsonp/app/extend/context.js",
+    "start": 1590500015032,
+    "end": 1590500015034,
+    "duration": 2,
+    "pid": 67139,
+    "index": 28
+  },
+  {
+    "name": "Require(24) /Users/huenchao/studys/pyramid/node_modules/egg-i18n/app/extend/context.js",
+    "start": 1590500015034,
+    "end": 1590500015035,
+    "duration": 1,
+    "pid": 67139,
+    "index": 29
+  },
+  {
+    "name": "Require(25) /Users/huenchao/studys/pyramid/node_modules/egg-multipart/app/extend/context.js",
+    "start": 1590500015035,
+    "end": 1590500015071,
+    "duration": 36,
+    "pid": 67139,
+    "index": 30
+  },
+  {
+    "name": "Require(26) /Users/huenchao/studys/pyramid/node_modules/egg-view/app/extend/context.js",
+    "start": 1590500015071,
+    "end": 1590500015072,
+    "duration": 1,
+    "pid": 67139,
+    "index": 31
+  },
+  {
+    "name": "Require(27) /Users/huenchao/studys/pyramid/node_modules/egg/app/extend/context.js",
+    "start": 1590500015072,
+    "end": 1590500015073,
+    "duration": 1,
+    "pid": 67139,
+    "index": 32
+  },
+  {
+    "name": "Load agent.js",
+    "start": 1590500015074,
+    "end": 1590500015092,
+    "duration": 18,
+    "pid": 67139,
+    "index": 33
+  },
+  {
+    "name": "Require(28) /Users/huenchao/studys/pyramid/node_modules/egg-security/agent.js",
+    "start": 1590500015074,
+    "end": 1590500015075,
+    "duration": 1,
+    "pid": 67139,
+    "index": 34
+  },
+  {
+    "name": "Require(29) /Users/huenchao/studys/pyramid/node_modules/egg-onerror/agent.js",
+    "start": 1590500015075,
+    "end": 1590500015075,
+    "duration": 0,
+    "pid": 67139,
+    "index": 35
+  },
+  {
+    "name": "Require(30) /Users/huenchao/studys/pyramid/node_modules/egg-watcher/agent.js",
+    "start": 1590500015075,
+    "end": 1590500015078,
+    "duration": 3,
+    "pid": 67139,
+    "index": 36
+  },
+  {
+    "name": "Require(31) /Users/huenchao/studys/pyramid/node_modules/egg-schedule/agent.js",
+    "start": 1590500015078,
+    "end": 1590500015079,
+    "duration": 1,
+    "pid": 67139,
+    "index": 37
+  },
+  {
+    "name": "Require(32) /Users/huenchao/studys/pyramid/node_modules/egg-development/agent.js",
+    "start": 1590500015079,
+    "end": 1590500015083,
+    "duration": 4,
+    "pid": 67139,
+    "index": 38
+  },
+  {
+    "name": "Require(33) /Users/huenchao/studys/pyramid/node_modules/egg-logrotator/agent.js",
+    "start": 1590500015083,
+    "end": 1590500015084,
+    "duration": 1,
+    "pid": 67139,
+    "index": 39
+  },
+  {
+    "name": "Require(34) /Users/huenchao/studys/pyramid/node_modules/egg/agent.js",
+    "start": 1590500015084,
+    "end": 1590500015084,
+    "duration": 0,
+    "pid": 67139,
+    "index": 40
+  },
+  {
+    "name": "Require(35) /Users/huenchao/studys/pyramid/agent.js",
+    "start": 1590500015084,
+    "end": 1590500015091,
+    "duration": 7,
+    "pid": 67139,
+    "index": 41
+  },
+  {
+    "name": "Before Start in /Users/huenchao/studys/pyramid/node_modules/egg-watcher/lib/init.js:15:14",
+    "start": 1590500015098,
+    "end": 1590500015144,
+    "duration": 46,
+    "pid": 67139,
+    "index": 42
+  },
+  {
+    "name": "Before Start in /Users/huenchao/studys/pyramid/node_modules/egg-schedule/agent.js:12:9",
+    "start": 1590500015099,
+    "end": 1590500015130,
+    "duration": 31,
+    "pid": 67139,
+    "index": 43
+  },
+  {
+    "name": "Before Start in /Users/huenchao/studys/pyramid/node_modules/egg-development/agent.js:12:9",
+    "start": 1590500015099,
+    "end": 1590500015154,
+    "duration": 55,
+    "pid": 67139,
+    "index": 44
+  }
+]

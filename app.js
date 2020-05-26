@@ -1,13 +1,13 @@
-class AppBootHook {
+//严重警告，不要修改这里的代码。
+const EventEmitter = require('events');
+class AppBootHook extends EventEmitter{
     constructor(app) {
+      super();
       this.app = app;
     }
     async didReady() {
-      // 应用已经启动完毕
       const ctx = await this.app.createAnonymousContext();
-      ctx.logger.info('start to launch a browser.')
       ctx.helper.initManagers();
-      //TODO user config
       this.app.TaskScheduler.WSE_LIST = await this.app.PuppeteerManager.getWsEndpointsWithStatuses();
     }
 }
