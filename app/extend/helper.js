@@ -208,7 +208,7 @@ class TaskScheduler extends EventEmitter {
             return TaskScheduler.app.logger.warn('the argument `options` must be a Object containing cb<function> and  schedule<object>.');
         }
         if(typeof options.cb === 'function'){
-            TaskScheduler[_SCHEDULE_CB] = options.cb ;
+            TaskScheduler[_SCHEDULE_CB] = options.cb;
         }
         if(typeof options.schedule === 'object'){
             TaskScheduler[_SCHEDULE_CONFIG] = {
@@ -287,12 +287,12 @@ module.exports = {
         });
         Object.defineProperty(app,'getCurScheduleConfig',{
             get:function (){
-                return _app.TaskScheduler[_SCHEDULE_CONFIG];
+                return TaskScheduler[_SCHEDULE_CONFIG];
             }
         });
-        Object.defineProperty(app,'getCurScheduleTask',{
+        Object.defineProperty(_app,'getCurScheduleTask',{
             get:function (){
-                return _app.TaskScheduler[_SCHEDULE_CB];
+                return TaskScheduler[_SCHEDULE_CB];
             }
         });
         Object.defineProperty(app,'crawlerQueue',{
