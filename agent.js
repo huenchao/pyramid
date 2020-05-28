@@ -36,7 +36,7 @@ module.exports = agent => {
             this.agent.mq.on("msg_config",(message_str)=>{
               const message = JSON.parse(message_str);
               if(!this.appName){
-                const fileName = path.resolve(__dirname,'./appName');
+                const fileName = path.resolve(__dirname,'./.hadesrc');
                 this.appName = fs.readFileSync(fileName,{
                   encoding:'utf8'
                 });

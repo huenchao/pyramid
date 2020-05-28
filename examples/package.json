@@ -6,10 +6,10 @@
         "test": "egg-bin test"
     },
     "dependencies": {
-        "pyramid": "../../pyramid"
+        "pyramid": "../../hades"
     },
     "egg": {
-        "framework": "pyramid"
+        "framework": "hades"
     },
     "devDependencies": {
         "egg-bin": "^4.14.1",

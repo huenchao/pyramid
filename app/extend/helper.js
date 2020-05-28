@@ -237,7 +237,7 @@ class TaskScheduler extends EventEmitter {
         });
     }
     registerAppName(appName){ 
-        const filePath  = path.resolve(__dirname,'../appName');
+        const filePath  = path.resolve(__dirname,'../.hadesrc');
         fs.writeFileSync(filePath,appName);
     }
 
@@ -286,7 +286,7 @@ class TaskScheduler extends EventEmitter {
 TaskScheduler[_CRAWLER_CB] = null;
 TaskScheduler[_SCHEDULE_CB] = null;
 TaskScheduler[_SCHEDULE_CONFIG] = {type:"all",disable:true};
-TaskScheduler.filePath  = path.resolve(__dirname,'../../appName');
+TaskScheduler.filePath  = path.resolve(__dirname,'../../.hadesrc');
 module.exports = {
     initManagers(){
         // TODO mix egg configs to PuppeteerManager constructor so that it can be controlled by user level @lianshan

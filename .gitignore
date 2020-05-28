@@ -41,5 +41,6 @@ jscoverage_lib/
 bower_components/ 
 dist/
 test/
+exports/
 
 package-lock.json
