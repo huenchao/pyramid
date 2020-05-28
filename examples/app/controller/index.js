@@ -1,6 +1,6 @@
 'use strict';
 
-const Controller = require('pyramid').Controller;
+const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
    render() {

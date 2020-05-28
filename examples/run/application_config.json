@@ -87,26 +87,26 @@
     "onerror": {
       "errorPageUrl": "",
       "appErrorFilter": null,
-      "templatePath": "/Users/huenchao/studys/pyramid/node_modules/egg-onerror/lib/onerror_page.mustache"
+      "templatePath": "/Users/huenchao/studys/hades/node_modules/egg-onerror/lib/onerror_page.mustache"
     },
     "i18n": {
       "defaultLocale": "en_US",
       "dirs": [
-        "/Users/huenchao/studys/pyramid/node_modules/egg-session/config/locales",
-        "/Users/huenchao/studys/pyramid/node_modules/egg-security/config/locales",
-        "/Users/huenchao/studys/pyramid/node_modules/egg-jsonp/config/locales",
-        "/Users/huenchao/studys/pyramid/node_modules/egg-onerror/config/locales",
-        "/Users/huenchao/studys/pyramid/node_modules/egg-i18n/config/locales",
-        "/Users/huenchao/studys/pyramid/node_modules/egg-watcher/config/locales",
-        "/Users/huenchao/studys/pyramid/node_modules/egg-schedule/config/locales",
-        "/Users/huenchao/studys/pyramid/node_modules/egg-multipart/config/locales",
-        "/Users/huenchao/studys/pyramid/node_modules/egg-development/config/locales",
-        "/Users/huenchao/studys/pyramid/node_modules/egg-logrotator/config/locales",
-        "/Users/huenchao/studys/pyramid/node_modules/egg-static/config/locales",
-        "/Users/huenchao/studys/pyramid/node_modules/egg-view/config/locales",
-        "/Users/huenchao/studys/pyramid/node_modules/egg/config/locales",
-        "/Users/huenchao/studys/pyramid/config/locales",
-        "/Users/huenchao/studys/pyramid/examples/config/locales"
+        "/Users/huenchao/studys/hades/node_modules/egg-session/config/locales",
+        "/Users/huenchao/studys/hades/node_modules/egg-security/config/locales",
+        "/Users/huenchao/studys/hades/node_modules/egg-jsonp/config/locales",
+        "/Users/huenchao/studys/hades/node_modules/egg-onerror/config/locales",
+        "/Users/huenchao/studys/hades/node_modules/egg-i18n/config/locales",
+        "/Users/huenchao/studys/hades/node_modules/egg-watcher/config/locales",
+        "/Users/huenchao/studys/hades/node_modules/egg-schedule/config/locales",
+        "/Users/huenchao/studys/hades/node_modules/egg-multipart/config/locales",
+        "/Users/huenchao/studys/hades/node_modules/egg-development/config/locales",
+        "/Users/huenchao/studys/hades/node_modules/egg-logrotator/config/locales",
+        "/Users/huenchao/studys/hades/node_modules/egg-static/config/locales",
+        "/Users/huenchao/studys/hades/node_modules/egg-view/config/locales",
+        "/Users/huenchao/studys/hades/node_modules/egg/config/locales",
+        "/Users/huenchao/studys/hades/config/locales",
+        "/Users/huenchao/studys/hades/examples/config/locales"
       ],
       "queryField": "locale",
       "cookieField": "locale",
@@ -117,8 +117,8 @@
     "watcher": {
       "type": "development",
       "eventSources": {
-        "default": "/Users/huenchao/studys/pyramid/node_modules/egg-watcher/lib/event-sources/default",
-        "development": "/Users/huenchao/studys/pyramid/node_modules/egg-watcher/lib/event-sources/development"
+        "default": "/Users/huenchao/studys/hades/node_modules/egg-watcher/lib/event-sources/default",
+        "development": "/Users/huenchao/studys/hades/node_modules/egg-watcher/lib/event-sources/development"
       }
     },
     "customLogger": {
@@ -164,14 +164,14 @@
     },
     "static": {
       "prefix": "/public/",
-      "dir": "/Users/huenchao/studys/pyramid/examples/app/public",
+      "dir": "/Users/huenchao/studys/hades/examples/app/public",
       "dynamic": true,
       "preload": false,
       "buffer": false,
       "maxFiles": 1000
     },
     "view": {
-      "root": "/Users/huenchao/studys/pyramid/examples/app/view",
+      "root": "/Users/huenchao/studys/hades/examples/app/view",
       "cache": false,
       "defaultExtension": ".html",
       "defaultViewEngine": "",
@@ -195,19 +195,19 @@
         "test": "egg-bin test"
       },
       "dependencies": {
-        "pyramid": "../../pyramid"
+        "hades": "../../hades"
       },
       "egg": {
-        "framework": "pyramid"
+        "framework": "hades"
       },
       "devDependencies": {
         "egg-bin": "^4.14.1",
         "egg-mock": "^4.0.0"
       }
     },
-    "baseDir": "/Users/huenchao/studys/pyramid/examples",
+    "baseDir": "/Users/huenchao/studys/hades/examples",
     "HOME": "/Users/huenchao",
-    "rundir": "/Users/huenchao/studys/pyramid/examples/run",
+    "rundir": "/Users/huenchao/studys/hades/examples/run",
     "dump": {
       "ignore": "<Set>"
     },
@@ -239,7 +239,7 @@
       "returnRawBody": true
     },
     "logger": {
-      "dir": "/Users/huenchao/studys/pyramid/examples/logs/framework-example",
+      "dir": "/Users/huenchao/studys/hades/examples/logs/framework-example",
       "encoding": "utf8",
       "env": "local",
       "level": "INFO",
@@ -334,8 +334,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/huenchao/studys/pyramid/node_modules/egg/config/plugin.js",
-      "path": "/Users/huenchao/studys/pyramid/node_modules/egg-session",
+      "from": "/Users/huenchao/studys/hades/node_modules/egg/config/plugin.js",
+      "path": "/Users/huenchao/studys/hades/node_modules/egg-session",
       "version": "3.2.0"
     },
     "security": {
@@ -347,8 +347,8 @@
         "session"
       ],
       "env": [],
-      "from": "/Users/huenchao/studys/pyramid/node_modules/egg/config/plugin.js",
-      "path": "/Users/huenchao/studys/pyramid/node_modules/egg-security",
+      "from": "/Users/huenchao/studys/hades/node_modules/egg/config/plugin.js",
+      "path": "/Users/huenchao/studys/hades/node_modules/egg-security",
       "version": "2.8.0"
     },
     "jsonp": {
@@ -360,8 +360,8 @@
         "security"
       ],
       "env": [],
-      "from": "/Users/huenchao/studys/pyramid/node_modules/egg/config/plugin.js",
-      "path": "/Users/huenchao/studys/pyramid/node_modules/egg-jsonp",
+      "from": "/Users/huenchao/studys/hades/node_modules/egg/config/plugin.js",
+      "path": "/Users/huenchao/studys/hades/node_modules/egg-jsonp",
       "version": "2.0.0"
     },
     "onerror": {
@@ -373,8 +373,8 @@
         "jsonp"
       ],
       "env": [],
-      "from": "/Users/huenchao/studys/pyramid/node_modules/egg/config/plugin.js",
-      "path": "/Users/huenchao/studys/pyramid/node_modules/egg-onerror",
+      "from": "/Users/huenchao/studys/hades/node_modules/egg/config/plugin.js",
+      "path": "/Users/huenchao/studys/hades/node_modules/egg-onerror",
       "version": "2.1.0"
     },
     "i18n": {
@@ -384,8 +384,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/huenchao/studys/pyramid/node_modules/egg/config/plugin.js",
-      "path": "/Users/huenchao/studys/pyramid/node_modules/egg-i18n",
+      "from": "/Users/huenchao/studys/hades/node_modules/egg/config/plugin.js",
+      "path": "/Users/huenchao/studys/hades/node_modules/egg-i18n",
       "version": "2.1.1"
     },
     "watcher": {
@@ -395,8 +395,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/huenchao/studys/pyramid/node_modules/egg/config/plugin.js",
-      "path": "/Users/huenchao/studys/pyramid/node_modules/egg-watcher",
+      "from": "/Users/huenchao/studys/hades/node_modules/egg/config/plugin.js",
+      "path": "/Users/huenchao/studys/hades/node_modules/egg-watcher",
       "version": "3.1.1"
     },
     "schedule": {
@@ -406,8 +406,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/huenchao/studys/pyramid/node_modules/egg/config/plugin.js",
-      "path": "/Users/huenchao/studys/pyramid/node_modules/egg-schedule",
+      "from": "/Users/huenchao/studys/hades/node_modules/egg/config/plugin.js",
+      "path": "/Users/huenchao/studys/hades/node_modules/egg-schedule",
       "version": "3.6.4"
     },
     "multipart": {
@@ -419,8 +419,8 @@
         "schedule"
       ],
       "env": [],
-      "from": "/Users/huenchao/studys/pyramid/node_modules/egg/config/plugin.js",
-      "path": "/Users/huenchao/studys/pyramid/node_modules/egg-multipart",
+      "from": "/Users/huenchao/studys/hades/node_modules/egg/config/plugin.js",
+      "path": "/Users/huenchao/studys/hades/node_modules/egg-multipart",
       "version": "2.10.3"
     },
     "development": {
@@ -434,8 +434,8 @@
       "env": [
         "local"
       ],
-      "from": "/Users/huenchao/studys/pyramid/node_modules/egg/config/plugin.js",
-      "path": "/Users/huenchao/studys/pyramid/node_modules/egg-development",
+      "from": "/Users/huenchao/studys/hades/node_modules/egg/config/plugin.js",
+      "path": "/Users/huenchao/studys/hades/node_modules/egg-development",
       "version": "2.4.3"
     },
     "logrotator": {
@@ -447,8 +447,8 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/huenchao/studys/pyramid/node_modules/egg/config/plugin.js",
-      "path": "/Users/huenchao/studys/pyramid/node_modules/egg-logrotator",
+      "from": "/Users/huenchao/studys/hades/node_modules/egg/config/plugin.js",
+      "path": "/Users/huenchao/studys/hades/node_modules/egg-logrotator",
       "version": "3.1.0"
     },
     "static": {
@@ -458,8 +458,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/huenchao/studys/pyramid/node_modules/egg/config/plugin.js",
-      "path": "/Users/huenchao/studys/pyramid/node_modules/egg-static",
+      "from": "/Users/huenchao/studys/hades/node_modules/egg/config/plugin.js",
+      "path": "/Users/huenchao/studys/hades/node_modules/egg-static",
       "version": "2.2.0"
     },
     "view": {
@@ -469,8 +469,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/huenchao/studys/pyramid/node_modules/egg/config/plugin.js",
-      "path": "/Users/huenchao/studys/pyramid/node_modules/egg-view",
+      "from": "/Users/huenchao/studys/hades/node_modules/egg/config/plugin.js",
+      "path": "/Users/huenchao/studys/hades/node_modules/egg-view",
       "version": "2.1.2"
     }
   }

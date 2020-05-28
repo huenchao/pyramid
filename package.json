@@ -1,7 +1,14 @@
 {
     "name": "hades",
-    "author": "lianshan",
     "version": "1.0.0",
+    "description": "A robust framework designed specifically for puppeteer&&egg app",
+    "author": "lianshan",
+    "keywords": [
+        "puppeteer",
+        "framework",
+        "koa",
+        "egg"
+      ],
     "dependencies": {
         "cron-parser": "^2.14.0",
         "detect-port": "^1.3.0",
@@ -11,7 +18,21 @@
         "node-schedule": "^1.3.2"
     },
     "main": "./index",
+    "files": [
+        "index.js",
+        "lib",
+        "app",
+        "config",
+        "agent.js",
+        "app.js",
+        ".hadesrc"
+    ],
+    "repository": {
+        "type": "git",
+        "url": ""
+      },
     "engines": {
         "node": ">=8.0.0"
-    }
+    },
+    "license": "MIT"
 }

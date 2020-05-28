@@ -6,7 +6,7 @@
         "test": "egg-bin test"
     },
     "dependencies": {
-        "pyramid": "../../hades"
+        "hades": "../../hades"
     },
     "egg": {
         "framework": "hades"
