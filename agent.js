@@ -1,10 +1,14 @@
-// disable、cronOptions、immediate、env、type、schedule
 const schedule = require('node-schedule');
 const ms = require('ms');
+const fs = require('fs');
+const path = require('path');
+
 module.exports = agent => {
     class ClusterStrategy extends agent.ScheduleStrategy {
         action(){
-          
+          if(Array.isArray(this.config.env) && !this.config.env.includes(process.env.EGG_SERVER_ENV)){
+              return;
+          }
           if(this.config.type === 'all'){
             this.sendAll();
           }else if(this.config.type === 'worker'){
@@ -25,16 +29,32 @@ module.exports = agent => {
         __init__(){
           if(!this.loaded){
             this.loaded = true;
-          
-          this.agent = agent;
-          this.timer = null;
-          this.job = null;
-          this.config = {disable:true};
-       
-          this.agent.messenger.on('update_action',(config)=>{
-            this.config = config;
-            this.start();
-          });
+            this.agent = agent;
+            this.timer = null;
+            this.job = null;
+            this.config = {disable:true};
+            this.agent.mq.on("msg_config",(message_str)=>{
+              const message = JSON.parse(message_str);
+              if(!this.appName){
+                const fileName = path.resolve(__dirname,'./appName');
+                this.appName = fs.readFileSync(fileName,{
+                  encoding:'utf8'
+                });
+              }
+              if(message.targetName === this.appName){
+                this.config = message.data;
+                this.start();
+              }
+            })
+            this.agent.messenger.on('update_action',(message)=>{
+              if(message.type === 'broadcast'){
+                this.agent.mq._write(JSON.stringify({
+                  data:message.data,
+                  type:'receive',
+                  targetName: message.target,
+                }))
+              }
+            });
          }
         }
         start() {

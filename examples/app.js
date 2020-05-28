@@ -1,3 +1,4 @@
+const appName = require("./package.json").name;
 class AppBootHook {
     constructor(app) {
       this.app = app;
@@ -10,14 +11,13 @@ class AppBootHook {
         cb:ctx.service.crawler.customTask
       });
       ctx.app.updateSchedule({
+        appName:appName,
         cb:ctx.service.crawler.schedule,
         schedule:{
-          type:"worker",
+          type:"all",
           immediate:true,
           disable:false,
-          env:[],
-          interval:5000
-
+          cron: '*/3 * * * * *',
         }
       });
     }

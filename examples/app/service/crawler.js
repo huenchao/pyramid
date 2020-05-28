@@ -23,7 +23,7 @@ class TestCase extends Service {
         await page.goto(taskParams.targetUrl, { waitUntil: 'domcontentloaded' });
      }
     async schedule(options){
-        console.log('爬虫任务的认识任务参数',options);
+        console.log('爬虫任务的认识任务参数',new Date().toUTCString());
     }
 
 }

@@ -5,6 +5,8 @@ const detect = require('detect-port');
 const puppeteer = require('puppeteer');
 const { execSync }  = require('child_process');
 const { Transform, Writable } = require('stream');
+const fs = require("fs");
+const path = require("path");
 
 
 const _isLinux = process.platform === 'linux';
@@ -97,7 +99,6 @@ class PuppeteerManager extends EventEmitter {
         const browser = await puppeteer.connect({ browserWSEndpoint });
         return browser;
     }
-
     async cleanTheSpecialBrowser(browserInstance, crashed = false, pid = ''){
         if (browserInstance && !crashed) {
             browserInstance.removeAllListeners();
@@ -205,7 +206,7 @@ class TaskScheduler extends EventEmitter {
 
     setCustomScheduleTaskHook(options){
         if(typeof options !== 'object'){
-            return TaskScheduler.app.logger.warn('the argument `options` must be a Object containing cb<function> and  schedule<object>.');
+            return TaskScheduler.app.logger.error('the argument `options` must be a Object containing cb<function> and schedule<object>.');
         }
         if(typeof options.cb === 'function'){
             TaskScheduler[_SCHEDULE_CB] = options.cb;
@@ -216,7 +217,28 @@ class TaskScheduler extends EventEmitter {
                 ...options.schedule
             }
         }
-        TaskScheduler.app.messenger.sendToAgent('update_action',TaskScheduler[_SCHEDULE_CONFIG])
+        if(typeof options.appName === "string"){
+
+            fs.writeFileSync(TaskScheduler.filePath, options.appName);
+        }
+        const appName = fs.readFileSync(TaskScheduler.filePath,{
+            encoding:'utf8'
+        })
+        if(!appName){
+            return TaskScheduler.app.logger.error(`
+            if you want to send a message, you must first determine the value of appName.`
+            );
+        }
+
+        TaskScheduler.app.messenger.sendToAgent('update_action',{
+            type:"broadcast",
+            data:TaskScheduler[_SCHEDULE_CONFIG],
+            target:appName
+        });
+    }
+    registerAppName(appName){ 
+        const filePath  = path.resolve(__dirname,'../appName');
+        fs.writeFileSync(filePath,appName);
     }
 
     vm(taskParams){
@@ -264,7 +286,7 @@ class TaskScheduler extends EventEmitter {
 TaskScheduler[_CRAWLER_CB] = null;
 TaskScheduler[_SCHEDULE_CB] = null;
 TaskScheduler[_SCHEDULE_CONFIG] = {type:"all",disable:true};
-
+TaskScheduler.filePath  = path.resolve(__dirname,'../../appName');
 module.exports = {
     initManagers(){
         // TODO mix egg configs to PuppeteerManager constructor so that it can be controlled by user level @lianshan
@@ -278,6 +300,11 @@ module.exports = {
         Object.defineProperty(app,'registerCrawler',{
             get:function (){
                 return _app.TaskScheduler.setCustomTaskHook;
+            }
+        });
+        Object.defineProperty(app,'registerAppName',{
+            get:function (){
+                return _app.TaskScheduler.registerAppName;
             }
         });
         Object.defineProperty(app,'updateSchedule',{

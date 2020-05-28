@@ -6,8 +6,7 @@ class ClusterTask extends Subscription {
     };
   }
   async subscribe() {
-     console.log('我的定时任务可以执行了。。。');
-     console.log('this.app.getCurScheduleTask',this.app.getCurScheduleTask )
+     await this.app.getCurScheduleTask();
   }
 }
 module.exports = ClusterTask;
