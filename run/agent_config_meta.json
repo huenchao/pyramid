@@ -1,0 +1,272 @@
+{
+  "keys": "/Users/huenchao/studys/hades/config/config.default.js",
+  "test": {
+    "key": "/Users/huenchao/studys/hades/config/config.default.js"
+  },
+  "security": {
+    "csrf": {
+      "enable": "/Users/huenchao/studys/hades/config/config.default.js",
+      "type": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "ignoreJSON": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "useSession": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "cookieName": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "sessionName": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "headerName": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "bodyName": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "queryName": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "refererWhiteList": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js"
+    },
+    "domainWhiteList": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+    "protocolWhiteList": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+    "xframe": {
+      "enable": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js"
+    },
+    "hsts": {
+      "enable": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "maxAge": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js"
+    },
+    "csp": {
+      "enable": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "policy": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js",
+      "checkAddress": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js"
+    }
+  },
+  "session": {
+    "maxAge": "/Users/huenchao/studys/hades/node_modules/egg-session/config/config.default.js",
+    "key": "/Users/huenchao/studys/hades/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/Users/huenchao/studys/hades/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/Users/huenchao/studys/hades/node_modules/egg-session/config/config.default.js"
+  },
+  "helper": {
+    "shtml": "/Users/huenchao/studys/hades/node_modules/egg-security/config/config.default.js"
+  },
+  "jsonp": {
+    "limit": "/Users/huenchao/studys/hades/node_modules/egg-jsonp/config/config.default.js",
+    "callback": "/Users/huenchao/studys/hades/node_modules/egg-jsonp/config/config.default.js",
+    "csrf": "/Users/huenchao/studys/hades/node_modules/egg-jsonp/config/config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "/Users/huenchao/studys/hades/node_modules/egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/huenchao/studys/hades/node_modules/egg-onerror/config/config.default.js",
+    "templatePath": "/Users/huenchao/studys/hades/node_modules/egg-onerror/config/config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "/Users/huenchao/studys/hades/node_modules/egg-i18n/config/config.default.js",
+    "dirs": "/Users/huenchao/studys/hades/node_modules/egg-i18n/config/config.default.js",
+    "queryField": "/Users/huenchao/studys/hades/node_modules/egg-i18n/config/config.default.js",
+    "cookieField": "/Users/huenchao/studys/hades/node_modules/egg-i18n/config/config.default.js",
+    "cookieDomain": "/Users/huenchao/studys/hades/node_modules/egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/huenchao/studys/hades/node_modules/egg-i18n/config/config.default.js"
+  },
+  "watcher": {
+    "type": "/Users/huenchao/studys/hades/node_modules/egg-watcher/config/config.unittest.js",
+    "eventSources": {
+      "default": "/Users/huenchao/studys/hades/node_modules/egg-watcher/config/config.default.js",
+      "development": "/Users/huenchao/studys/hades/node_modules/egg-watcher/config/config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/Users/huenchao/studys/hades/node_modules/egg-schedule/config/config.default.js",
+      "file": "/Users/huenchao/studys/hades/node_modules/egg-schedule/config/config.default.js"
+    }
+  },
+  "schedule": {
+    "directory": "/Users/huenchao/studys/hades/node_modules/egg-schedule/config/config.default.js"
+  },
+  "multipart": {
+    "mode": "/Users/huenchao/studys/hades/node_modules/egg-multipart/config/config.default.js",
+    "autoFields": "/Users/huenchao/studys/hades/node_modules/egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/huenchao/studys/hades/node_modules/egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/huenchao/studys/hades/node_modules/egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/huenchao/studys/hades/node_modules/egg-multipart/config/config.default.js",
+    "fields": "/Users/huenchao/studys/hades/node_modules/egg-multipart/config/config.default.js",
+    "fileSize": "/Users/huenchao/studys/hades/node_modules/egg-multipart/config/config.default.js",
+    "files": "/Users/huenchao/studys/hades/node_modules/egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/huenchao/studys/hades/node_modules/egg-multipart/config/config.default.js",
+    "whitelist": "/Users/huenchao/studys/hades/node_modules/egg-multipart/config/config.default.js",
+    "tmpdir": "/Users/huenchao/studys/hades/node_modules/egg-multipart/config/config.default.js",
+    "cleanSchedule": {
+      "cron": "/Users/huenchao/studys/hades/node_modules/egg-multipart/config/config.default.js"
+    }
+  },
+  "logrotator": {
+    "filesRotateByHour": "/Users/huenchao/studys/hades/node_modules/egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/huenchao/studys/hades/node_modules/egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/huenchao/studys/hades/node_modules/egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/huenchao/studys/hades/node_modules/egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/huenchao/studys/hades/node_modules/egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/huenchao/studys/hades/node_modules/egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/huenchao/studys/hades/node_modules/egg-logrotator/config/config.default.js"
+  },
+  "static": {
+    "prefix": "/Users/huenchao/studys/hades/node_modules/egg-static/config/config.default.js",
+    "dir": "/Users/huenchao/studys/hades/node_modules/egg-static/config/config.default.js",
+    "dynamic": "/Users/huenchao/studys/hades/node_modules/egg-static/config/config.default.js",
+    "preload": "/Users/huenchao/studys/hades/node_modules/egg-static/config/config.default.js",
+    "buffer": "/Users/huenchao/studys/hades/node_modules/egg-static/config/config.default.js",
+    "maxFiles": "/Users/huenchao/studys/hades/node_modules/egg-static/config/config.default.js"
+  },
+  "view": {
+    "root": "/Users/huenchao/studys/hades/node_modules/egg-view/config/config.default.js",
+    "cache": "/Users/huenchao/studys/hades/node_modules/egg-view/config/config.default.js",
+    "defaultExtension": "/Users/huenchao/studys/hades/node_modules/egg-view/config/config.default.js",
+    "defaultViewEngine": "/Users/huenchao/studys/hades/node_modules/egg-view/config/config.default.js",
+    "mapping": "/Users/huenchao/studys/hades/node_modules/egg-view/config/config.default.js"
+  },
+  "env": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "name": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "cookies": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "proxy": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "maxIpsCount": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "maxProxyCount": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "protocolHeaders": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "ipHeaders": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "hostHeaders": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "pkg": {
+    "name": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "version": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "description": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "author": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "keywords": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "dependencies": {
+      "cron-parser": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "detect-port": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "egg": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "ms": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "node-rdkafka": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "node-schedule": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+    },
+    "main": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "files": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "scripts": {
+      "test": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+    },
+    "repository": {
+      "type": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "url": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+    },
+    "engines": {
+      "node": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+    },
+    "license": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "devDependencies": {
+      "egg-bin": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "egg-mock": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+    }
+  },
+  "baseDir": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "HOME": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "rundir": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "dump": {
+    "ignore": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "notFound": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "sitefile": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "middlewares": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "httpClient": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+  },
+  "bodyParser": {
+    "enable": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "formLimit": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "jsonLimit": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "textLimit": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "strict": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "queryString": {
+      "arrayLimit": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "depth": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "parameterLimit": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+    },
+    "onerror": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+  },
+  "logger": {
+    "dir": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "env": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "level": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "consoleLevel": "/Users/huenchao/studys/hades/node_modules/egg/config/config.unittest.js",
+    "disableConsoleAfterReady": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "outputJSON": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "buffer": "/Users/huenchao/studys/hades/node_modules/egg/config/config.unittest.js",
+    "appLogName": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "coreLogName": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "agentLogName": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "errorLogName": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "coreLogger": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "allowDebugAtProd": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "dnsCacheLookupInterval": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "request": {
+      "timeout": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "logging": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+  },
+  "coreMiddleware": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "workerStartTimeout": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "serverTimeout": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "port": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+      "hostname": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js",
+    "responseTimeout": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+  },
+  "onClientError": "/Users/huenchao/studys/hades/node_modules/egg/config/config.default.js"
+}
