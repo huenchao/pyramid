@@ -1,18 +1,40 @@
 const assert = require('assert');
 const mock = require('egg-mock');
+const fs  = require('fs');
+const { Transform } = require('stream');
+const _CRAWLER_CB = Symbol.for('TaskScheduler#Crawler#func');
+//const rewire = require('rewire');
+// const helperModule = rewire("../../app/extend/helper");
+// const PuppeteerManager = helperModule.__get__("PuppeteerManager");
+// const TaskScheduler = helperModule.__get__("TaskScheduler");
+const { PuppeteerManager,TaskScheduler } = require("../../app/extend/helper");
+
 describe('test/extend/helper.test.js', () => {
     let app;
     before(() => {
-      // 创建当前应用的 app 实例
       app = mock.app();
-      // 等待 app 启动成功，才能执行测试用例
       return app.ready();
     });
-    it('should initial PuppeteerManager', () => {
-        assert(typeof app.PuppeteerManager === 'object');
+    it('check out initial works', () => {
+      assert(app.PuppeteerManager);
+      assert(app.TaskScheduler);
     });
-    it('should initial TaskScheduler', () => {
-      assert(typeof app.TaskScheduler === 'object');
-  });
+
+    it('check out proxy funcs in app', () => {
+      assert(typeof app.registerCrawler === 'function');
+      assert(typeof app.registerAppName === 'function' );
+      assert(typeof app.updateSchedule === 'function' );
+      assert(app.crawlerQueue instanceof Transform );
+      assert(typeof app.getCurScheduleConfig === 'object' );
+      assert(typeof app.getCurScheduleTask === 'object' );
+    });
+
+    it('set hook functions', () => {
+      const func = ()=>{ return 1};
+      app.registerCrawler({
+        cb:func
+      });
+      assert(TaskScheduler[_CRAWLER_CB]() === 1)
+    });
 
 });

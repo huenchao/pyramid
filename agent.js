@@ -37,9 +37,17 @@ module.exports = agent => {
               const message = JSON.parse(message_str);
               if(!this.appName){
                 const fileName = path.resolve(__dirname,'./.hadesrc');
-                this.appName = fs.readFileSync(fileName,{
+                const appInfo_str = fs.readFileSync(fileName,{
                   encoding:'utf8'
-                });
+              })
+              let appInfo;
+              try {
+                  appInfo = JSON.parse(appInfo_str)
+              } catch (error) {
+                  appInfo = {}
+              }
+      
+                this.appName = appInfo.appName;
               }
               if(message.targetName === this.appName){
                 this.config = message.data;

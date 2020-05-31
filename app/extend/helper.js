@@ -8,7 +8,6 @@ const { Transform, Writable } = require('stream');
 const fs = require("fs");
 const path = require("path");
 
-
 const _isLinux = process.platform === 'linux';
 const ErrorCodes = { tcpError: 1, tcpHealthy: 0};
 
@@ -115,7 +114,7 @@ class PuppeteerManager extends EventEmitter {
     }
 }
 
-const _CRAWLER_CB = Symbol('TaskScheduler#Crawler#func');
+const _CRAWLER_CB = Symbol.for('TaskScheduler#Crawler#func');
 const _SCHEDULE_CB = Symbol('TaskScheduler#Schedule#func');
 const _SCHEDULE_CONFIG = Symbol('TaskScheduler#Schedule#config');
 class TaskScheduler extends EventEmitter {
@@ -217,14 +216,22 @@ class TaskScheduler extends EventEmitter {
                 ...options.schedule
             }
         }
-        if(typeof options.appName === "string"){
-
-            fs.writeFileSync(TaskScheduler.filePath, options.appName);
-        }
-        const appName = fs.readFileSync(TaskScheduler.filePath,{
+        const appInfo_str = fs.readFileSync(TaskScheduler.filePath,{
             encoding:'utf8'
         })
-        if(!appName){
+        let appInfo;
+        try {
+            appInfo = JSON.parse(appInfo_str)
+        } catch (error) {
+            appInfo = {}
+        }
+
+        if(typeof options.appName === "string"){
+            appInfo.appName = options.appName;
+            fs.writeFileSync(TaskScheduler.filePath, JSON.stringify(appInfo));
+        }
+
+        if(!appInfo.appName){
             return TaskScheduler.app.logger.error(`
             if you want to send a message, you must first determine the value of appName.`
             );
@@ -233,12 +240,23 @@ class TaskScheduler extends EventEmitter {
         TaskScheduler.app.messenger.sendToAgent('update_action',{
             type:"broadcast",
             data:TaskScheduler[_SCHEDULE_CONFIG],
-            target:appName
+            target:appInfo.appName
         });
     }
     registerAppName(appName){ 
-        const filePath  = path.resolve(__dirname,'../.hadesrc');
-        fs.writeFileSync(filePath,appName);
+        const appInfo_str = fs.readFileSync(TaskScheduler.filePath,{
+            encoding:'utf8'
+        })
+        let appInfo;
+        try {
+            appInfo = JSON.parse(appInfo_str)
+        } catch (error) {
+            appInfo = {}
+        }
+        if(typeof appName === "string"){
+            appInfo.appName = appName;
+            fs.writeFileSync(TaskScheduler.filePath, JSON.stringify(appInfo));
+        }
     }
 
     vm(taskParams){
@@ -294,6 +312,8 @@ module.exports = {
         this.app.TaskScheduler = new TaskScheduler({ app: this.app});
         module.exports.proxy(this.app);
     },
+    TaskScheduler,
+    PuppeteerManager,
     // public API
     proxy(_app){
         const app = Object.getPrototypeOf(_app);
@@ -326,8 +346,7 @@ module.exports = {
             get:function (){
                 return _app.TaskScheduler.producer;
             }
-        });
-        
+        }); 
     }
 };
 

@@ -40,6 +40,7 @@
     "license": "MIT",
     "devDependencies": {
         "egg-bin": "^4.14.1",
-        "egg-mock": "^4.0.0"
+        "egg-mock": "^4.0.0",
+        "rewire": "^5.0.0"
     }
 }
